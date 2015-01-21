@@ -2,8 +2,7 @@ var express = require('express');
 var app = express();
 app.use(express.static('public'));
 
-
-app.get('/', function(req, res) {
+app.get('/', function(req, res){
 
 var names = ["Ricki", "Katrina", "Gabriel", "Shoshanah"];
 var towns = ["Cleveland", "Taiwan", "Conneticut", "Los Angeles", "New York"];
@@ -25,7 +24,7 @@ var rand_tag = hashTag[Math.floor(Math.random() * hashTag.length)];
     says: rand_tag
   }
   res.json(person);
-  console.log("Sent from /index");
+  console.log("Sent");
 });
 
 var server = app.listen(3000, function() {
