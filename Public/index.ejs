@@ -1,0 +1,30 @@
+<html>
+
+<body>
+<div>
+<p></p>
+</div>
+  <script>
+  //var button = document.querySelector("button");
+  //button.addEventListener("click", function(){
+  var url = "http://localhost:3000/"
+  var xhr = new XMLHttpRequest();
+
+  xhr.open("GET", url);
+  xhr.addEventListener('load', function(e) {
+    var stuff = e
+    var data = xhr.responseText;
+    var parsed = JSON.parse(data);
+    console.log(e);
+    var body = document.querySelector("body");
+    var p = document.createElement("p");
+    body.appendChild(p);
+    p.innerHTML = parsed.name;
+  });
+
+  xhr.send();
+  console.log(stuff);
+//})
+  </script>
+</body>
+</html>
