@@ -14,6 +14,7 @@ var express = require('express');
 var request = require('request');
 
 var app = express();
+app.use(express.static('public'));
 
 app.get('/', function(req, res) {
   var url = 'http://api.randomuser.me/';
